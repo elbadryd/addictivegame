@@ -90,5 +90,5 @@ def find_path(directions, point = start_pos, path = [start_pos]):
     if is_crossing(point) != -1:
         return f'-1 {path.index(point)}'
     return find_path(directions[1:], find_next(point, directions[0]), path)
-print(find_path(directions))
+# print(find_path(directions))
 
