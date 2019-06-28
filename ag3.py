@@ -13,9 +13,9 @@ points = file[3:no_points*2 +3]
 points = list(map(lambda x: int(x), points))
 #matrix of all points and colors
 points_matrix = np.array(points).reshape((no_points, 2))
-def filter_points():
+def filter_points(mtx):
     filtered = []
-    for x in points_matrix:
+    for x in mtx:
         if x[1] != color:
             filtered.append(x[0])
     return list(filtered)
@@ -26,7 +26,7 @@ def end_pos():
             filtered.append(x)
     return list(filter(lambda x: int(x[0]) != start_pos, filtered))[0][0]
 #points that are not part of path
-foreign_points = filter_points()
+foreign_points = filter_points(points_matrix)
 
 def is_number(string):
     try: 
